@@ -1,4 +1,4 @@
 #  Interface emulation program  
 
 
-This is an example  
+Documentation can be found at: https://lev875.github.io/InterfaceEmulator/
