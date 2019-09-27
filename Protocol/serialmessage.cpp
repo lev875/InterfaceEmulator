@@ -16,6 +16,9 @@ SerialMessage::SerialMessage() {
     this->header.crc = SerialMessageMC::Crc16(reinterpret_cast<unsigned char*>(this->data), 0);
 }
 
+/**
+ * Создает пакет для RS485 и в качестве даных устанавливает переданною строку, расчитывает длину пакета и контрольную сумму и записывает их в заголовок
+ */
 SerialMessage::SerialMessage(QString s) {
     this->header.type = SerialMessageMC::RS485;
     QByteArray arr = s.toLatin1();
@@ -23,6 +26,16 @@ SerialMessage::SerialMessage(QString s) {
     this->header.length = arr.length() + 4;
     this->header.crc = SerialMessageMC::Crc16(reinterpret_cast<unsigned char*> (this->data), this->header.length - 4);
 
+}
+
+/**
+ * Создает пакет с заданными данными и интерфейсом. Рассчитывает и устанавливает в заголовке длину и контрольную сумму.
+ */
+SerialMessage::SerialMessage(QByteArray arr, SerialMessageMC::Interface interface) {
+    this->header.type = interface;
+    strcpy(this->data, arr.data());
+    this->header.length = arr.length() + 4;
+    this->header.crc = SerialMessageMC::Crc16(reinterpret_cast<unsigned char*>(this->data), this->header.length - 4);
 }
 
 /**
@@ -58,10 +71,10 @@ QByteArray SerialMessage::getPackedMessage() {
 std::string SerialMessage::toString() {
     std::stringstream ss;
 
-    ss << "Type:  "  << static_cast<int> (this->header.type)     << std::endl;
-    ss << "Len:   "   << static_cast<int> (this->header.length)   << std::endl;
+    ss << "Type:  " << static_cast<int> (this->header.type)     << std::endl;
+    ss << "Len:   " << static_cast<int> (this->header.length)   << std::endl;
     ss << "Crc16: " << std::hex << this->header.crc             << std::endl;
-    ss << "Data:  "  << this->data                               << std::endl;
+    ss << "Data:  " << this->data                               << std::endl;
 
     return ss.str();
 }

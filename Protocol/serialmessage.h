@@ -12,9 +12,7 @@
  *
  *
  * @section Example
- *
- *
- * @include main.cpp
+ * @include{lineno} example.cpp
  */
 
 /**
@@ -36,6 +34,14 @@ public:
      * @param s Строка, которая будет передана как данные
      */
     SerialMessage(QString s);
+
+
+    /**
+     * @brief Конструктор с установкой данных и интерфейса
+     * @param arr Массив данных для передачи
+     * @param interface Интерфейс, куда нужно послать данные
+     */
+    SerialMessage(QByteArray arr, SerialMessageMC::Interface interface);
 
     /**
      * @brief Сеттер для данных.
