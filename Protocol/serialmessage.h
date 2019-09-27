@@ -10,9 +10,14 @@
 /**
  * @mainpage Interface Emulator Library
  *
+ *Interface emulator for Milandr
  *
  * @section Example
+ *
+ * Example usage
+ *
  * @include example.cpp
+ *
  */
 
 /**
