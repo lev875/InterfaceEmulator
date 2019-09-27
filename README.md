@@ -1,1 +1,1 @@
-#  Interface emulation programm
+#  Interface emulation program  
