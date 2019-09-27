@@ -12,7 +12,7 @@
  *
  *
  * @section Example
- * @include {lineno} example.cpp
+ * @include{lineno} example.cpp
  */
 
 /**
