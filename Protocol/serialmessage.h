@@ -14,7 +14,7 @@
  * @section Example
  *
  *
- * @include{lineno} main.cpp
+ * @include main.cpp
  */
 
 /**
