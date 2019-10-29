@@ -11,31 +11,31 @@
  */
 SerialMessage::SerialMessage() {
     this->data[0] = '\0';
-    this->header.type = SerialMessageMC::RS485;
+    this->header.type = RS485;
     this->header.length = 4;
-    this->header.crc = SerialMessageMC::Crc16(reinterpret_cast<unsigned char*>(this->data), 0);
+    this->header.crc = Crc16(reinterpret_cast<unsigned char*>(this->data), 0);
 }
 
 /**
  * Создает пакет для RS485 и в качестве даных устанавливает переданною строку, расчитывает длину пакета и контрольную сумму и записывает их в заголовок
  */
 SerialMessage::SerialMessage(QString s) {
-    this->header.type = SerialMessageMC::RS485;
+    this->header.type = RS485;
     QByteArray arr = s.toLatin1();
     strcpy(this->data, arr.data());
     this->header.length = arr.length() + 4;
-    this->header.crc = SerialMessageMC::Crc16(reinterpret_cast<unsigned char*> (this->data), this->header.length - 4);
+    this->header.crc = Crc16(reinterpret_cast<unsigned char*> (this->data), this->header.length - 4);
 
 }
 
 /**
  * Создает пакет с заданными данными и интерфейсом. Рассчитывает и устанавливает в заголовке длину и контрольную сумму.
  */
-SerialMessage::SerialMessage(QByteArray arr, SerialMessageMC::Interface interface) {
+SerialMessage::SerialMessage(QByteArray arr, Command interface) {
     this->header.type = interface;
     strcpy(this->data, arr.data());
     this->header.length = arr.length() + 4;
-    this->header.crc = SerialMessageMC::Crc16(reinterpret_cast<unsigned char*>(this->data), this->header.length - 4);
+    this->header.crc = Crc16(reinterpret_cast<unsigned char*>(this->data), this->header.length - 4);
 }
 
 /**
@@ -45,10 +45,10 @@ void SerialMessage::setData(QString &s) {
     QByteArray arr = s.toLatin1();
     strcpy(this->data, arr.data());
     this->header.length = arr.length() + 4;
-    this->header.crc = SerialMessageMC::Crc16(reinterpret_cast<unsigned char*> (this->data), this->header.length - 4);
+    this->header.crc = Crc16(reinterpret_cast<unsigned char*> (this->data), this->header.length - 4);
 }
 
-void SerialMessage::setType(SerialMessageMC::Interface interface) {
+void SerialMessage::setType(Command interface) {
 
     this->header.type = interface;
 }

@@ -10,6 +10,10 @@ using namespace std;
  * @file
  */
 
+
+/**
+ * @brief Example usage
+ */
 int main()
 {
 

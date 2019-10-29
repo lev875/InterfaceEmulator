@@ -19,7 +19,7 @@
  *
  * Обнаружение одинарных, двойных, тройных и всех нечетных ошибок\n
  */
-unsigned short SerialMessageMC::Crc16(unsigned char *pcBlock, unsigned short len) {
+unsigned short Crc16(unsigned char *pcBlock, unsigned short len) {
     unsigned short crc = 0xFFFF;
     unsigned char i;
 
@@ -32,15 +32,15 @@ unsigned short SerialMessageMC::Crc16(unsigned char *pcBlock, unsigned short len
     return crc;
 }
 
-SerialMessageMC::Header* SerialMessageMC::getHeader(char *packet) {
-    return reinterpret_cast<SerialMessageMC::Header*> (packet);
+Header* getHeader(char *packet) {
+    return reinterpret_cast<Header*> (packet);
 }
 
-unsigned char *SerialMessageMC::getData(char *packet) {
-    return reinterpret_cast<unsigned char*>(packet + 4);
+unsigned char* getData(char *packet) {
+    return (unsigned char*) (packet + 4);
 }
 
-bool SerialMessageMC::checkCrc(char *packet) {
+bool checkCrc(char *packet) {
     Header* header = getHeader(packet);
     unsigned char*   data   = getData(packet);
 

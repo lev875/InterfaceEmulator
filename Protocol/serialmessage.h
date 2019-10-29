@@ -10,7 +10,7 @@
 /**
  * @mainpage Interface Emulator Library
  *
- *Interface emulator for Milandr
+ * Interface emulator for Milandr
  *
  * @section Example
  *
@@ -46,7 +46,7 @@ public:
      * @param arr Массив данных для передачи
      * @param interface Интерфейс, куда нужно послать данные
      */
-    SerialMessage(QByteArray arr, SerialMessageMC::Interface interface);
+    SerialMessage(QByteArray arr, Command interface);
 
     /**
      * @brief Сеттер для данных.
@@ -60,7 +60,7 @@ public:
      * @brief Сеттер для интерфейса назначения см.  SerialMessageMC::Interface
      * @param interface Номер интерфейса
      */
-    void        setType(SerialMessageMC::Interface interface);
+    void        setType(Command interface);
 
     /**
      * @brief Создает массив байтов, готовый для передачи.
@@ -79,7 +79,7 @@ private:
     /**
      * @brief Структура заголовка пакета, см. SerialMessageMC::Header
      */
-    SerialMessageMC::Header header;
+    Header header;
 
     /**
      * @brief Массив данных для передачи
