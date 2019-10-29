@@ -1,0 +1,5 @@
+<map id="checkCrc" name="checkCrc">
+<area shape="rect" id="node2" href="$serialmessagemc_8c.html#a261b6a057932c6300c8d97d4b925e9f2" title="Получает заголовок из пакета " alt="" coords="133,5,224,32"/>
+<area shape="rect" id="node3" href="$serialmessagemc_8c.html#a19d9e049601fe5c060a39d09f2b6c75d" title="Получает указатель на массив данных из пакета " alt="" coords="141,56,216,83"/>
+<area shape="rect" id="node4" href="$serialmessagemc_8c.html#a80c950bfca842f0283f06e834d6720c6" title="Функция расчета CRC16. " alt="" coords="149,107,208,133"/>
+</map>

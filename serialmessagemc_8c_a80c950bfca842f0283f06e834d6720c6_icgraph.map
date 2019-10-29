@@ -1,0 +1,6 @@
+<map id="Crc16" name="Crc16">
+<area shape="rect" id="node2" href="$example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Example usage. " alt="" coords="376,64,431,90"/>
+<area shape="rect" id="node3" href="$class_serial_message.html#aef84d2a1b8928bf39c0f4e59bdf7e36f" title="Конструктор по умолчанию. " alt="" coords="112,38,328,65"/>
+<area shape="rect" id="node4" href="$class_serial_message.html#a07ebad5adfaf953ee2f98333c577f603" title="Сеттер для данных. " alt="" coords="133,89,307,116"/>
+<area shape="rect" id="node5" href="$serialmessagemc_8h.html#a8824c3575b878c1aa30df964a9423b0a" title="Проверяет соответствие контрольной суммы из пакета расчитанной контрольной сумме " alt="" coords="180,140,260,166"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="SerialMessage::SerialMessage" name="SerialMessage::SerialMessage">
+<area shape="rect" id="node2" href="/home/travis/build/lev875/InterfaceEmulator/qtcore.tags$qstring.html#toLatin1" title="QString::toLatin1" alt="" coords="275,5,406,32"/>
+<area shape="rect" id="node3" href="/home/travis/build/lev875/InterfaceEmulator/qtcore.tags$qbytearray.html#data" title="QByteArray::data" alt="" coords="275,56,406,83"/>
+<area shape="rect" id="node4" href="/home/travis/build/lev875/InterfaceEmulator/qtcore.tags$qbytearray.html#length" title="QByteArray::length" alt="" coords="269,107,412,133"/>
+<area shape="rect" id="node5" href="$serialmessagemc_8c.html#a80c950bfca842f0283f06e834d6720c6" title="Функция расчета CRC16. " alt="" coords="311,157,370,184"/>
+</map>
